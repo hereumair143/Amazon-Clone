@@ -38,7 +38,7 @@
 
 .add-first{
     color: #cccccc;
-    font-size: 0.85;
+    font-size: 0.85rem;
     margin-left: 15px;
 
 }
@@ -147,25 +147,42 @@ span{
 /** panel **/
 
 .hero-section{
-    background-image: url("hero_image.jpg");
-    background-size: cover;
-    height: 350px;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-
+    width: 100%;
+    position: relative;
+    
 }
 
-.hero-msg {
-    background-color: white;
+.hero-section img{
+   height: fit-content;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+}
+.hero-msg  {
+    /* background-color: white;
     color: black;
     height: 40px;
+    padding: 10px;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content:center;
     font-size: 0.85rem;
     width: 80%;
-    margin-bottom: 25px;
+    margin-bottom: 25px; */
+
+    background: white;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+
+}
+.hero-msg p{
+    padding: 10px;
+
 }
 
 .hero-msg a {
@@ -175,15 +192,18 @@ span{
 /** shop section **/
 
 .shop-section{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* flex-wrap: wrap; */
+    
     justify-content: space-evenly;
     background-color: #e2e7e7;
 }
 
 .box {
     height: 400px;
-    width: 23%;
+    /* width: 23%; */
+
     background-color: white;
     padding: 20px 0px 15px;
     margin-top: 15px;
@@ -276,3 +296,65 @@ ul a{
 
 }
 
+
+@media only screen and (max-width: 450px){
+    .shop-section{
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+
+    .box{
+        width: 100%;
+    }
+
+    .hero-section img{
+        height: 240px;
+
+    }
+
+    .hero-msg{
+        font-size: 10px;
+    }
+}
+/* Media Query for screens smaller than 600px */
+@media only screen and (min-width: 450px) and (max-width: 700px)  {
+    /* .add-first, .add-second, .add-icon, .nav-search,.search-select,.search-input,.search-icon, i{
+      font-size: 4px;
+      width: 70%;
+    } */
+
+
+    .shop-section{
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+    }
+    .shop-section h2{
+        font-size: 20px;
+    }
+
+    .box{
+        width: 100%;
+    }
+
+    .hero-msg{
+        font-size: 13px;
+    }
+
+}
+    
+  
+  /* Media Query for screens between 600px and 900px */
+  @media screen and (min-width: 701px) and (max-width: 900px) {
+    .shop-section{
+        grid-template-columns: 1fr 1fr 1fr;
+        place-items: center;
+    }
+
+    .box{
+        width: 100%;
+    }
+   
+  }
+  
+  
+  
